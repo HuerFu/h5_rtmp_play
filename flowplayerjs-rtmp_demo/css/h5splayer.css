@@ -1,0 +1,40 @@
+.h5video {
+	width: 576px;
+    height: 320px;
+    border: 1px solid black;
+	background-color:#000000;
+}
+
+.h5video1 {
+	width: 100%;
+    height: 100%;
+    border: 1px solid black;
+	background-color:#000000;
+}
+
+.h5videodiv{
+    display: inline-block;
+	position:relative;
+}
+
+.h5videodiv1{
+	width: 100%;
+    height: 100%;
+	position:relative;
+	background-color:#000000;
+}
+
+.playpause {
+    background-image:url(/img/media_play_pause_resume.png);
+    background-repeat:no-repeat;
+    width:25%;
+    height:25%;
+    position:absolute;
+    left:0%;
+    right:0%;
+    top:0%;
+    bottom:0%;
+    margin:auto;
+    background-size:contain;
+    background-position: center;
+}

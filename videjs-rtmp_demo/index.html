@@ -1,0 +1,41 @@
+<!-- 播放rtmp网络视频 -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>播放器</title>
+		<link href="./videolib/css/video-js.min.css" rel="stylesheet" type="text/css">
+		<style>
+			html,body{
+				height: 100%;
+				width: 100%;
+				padding: 0;
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<video id="myvideo1" width="350" height="250" class="video-js vjs-default-skin" muted controls>
+				<!-- rtmp视频流 -->
+				<source src="rtmp://202.69.69.180:443/webcast/bshdlive-pc" type="rtmp/flv">
+			</video>
+			<br />
+			<video id="myvideo2" width="350" height="250" class="video-js vjs-default-skin" muted controls>
+				<!-- rtmp视频流 -->
+				<source src="rtmp://media3.sinovision.net:1935/live/livestream" type="rtmp/flv">
+			</video>
+		</div>
+		<script src="./videolib/js/video.min.js"></script>
+		<script src="./videolib/videojs-flash.min.js"> </script>
+		<script>
+			var player1 = videojs("myvideo1", {}, function() {
+				console.log("videojs播放器初始化成功")
+			})
+			player1.play()
+			var player2 = videojs("myvideo2", {}, function() {
+				console.log("videojs播放器初始化成功")
+			})
+			player2.play()
+		</script>
+	</body>
+</html>

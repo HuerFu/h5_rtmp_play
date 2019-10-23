@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>rtmp直播</title>
+	<link rel="stylesheet" href="./css/video-js.css">
+	<link rel="stylesheet" href="./css/h5splayer.css">
+	<script src="./js/flowplayer-3.2.13.min.js"></script>
+</head>
+<body>
+	<div class="h5video" id="playerDiv1" style="float: left;"></div>	
+	<div class="h5video" id="playerDiv2" style="float: left;"></div>
+	<div class="h5video" id="playerDiv3" style="float: left;"></div>
+	<script>
+			
+		// 播放地址
+		var url_1 = 'rtmp://202.69.69.180:443/webcast/bshdlive-pc';
+		var url_2 = 'rtmp://media3.sinovision.net:1935/live/livestream';
+		var url_3 = 'rtmp://58.200.131.2:1935/livetv/hunantv';
+
+		var oPlayerDiv1 = document.getElementById('playerDiv1');
+		var	oPlayerDiv2 = document.getElementById('playerDiv2');
+		var	oPlayerDiv3 = document.getElementById('playerDiv3');
+
+		oPlayerDiv1.setAttribute("data-rtmp", url_1);
+		oPlayerDiv1.setAttribute("href", url_1);
+
+		oPlayerDiv2.setAttribute("data-rtmp", url_2);
+		oPlayerDiv2.setAttribute("href", url_2);
+
+		oPlayerDiv3.setAttribute("data-rtmp", url_3);
+		oPlayerDiv3.setAttribute("href", url_3);
+
+		var swfStr = "./swf/flowplayer-3.2.18.swf"
+		var	obj_1 = {
+				clip: {
+					provider: 'rtmp',
+					bufferLength: 0,
+					bufferTime: 0,
+					autoPlay: true,
+					live: true
+				},
+				plugins: {
+					rtmp: {
+						url: "flowplayer.rtmp-3.2.13.swf",
+						netConnectionUrl: url_1
+					}
+				}
+			};
+			
+		const obj_2 = JSON.parse(JSON.stringify(obj_1))   //js对象的深拷贝   // JSON.stringify() 方法将 JavaScript 对象转换为字符串   JSON.parse() 方法将数据转换为 JavaScript 对象
+		obj_2.plugins.rtmp.netConnectionUrl = url_2;
+		const obj_3 = JSON.parse(JSON.stringify(obj_1)) 
+		obj_3.plugins.rtmp.netConnectionUrl = url_3;
+
+		flowplayer('playerDiv1', swfStr, obj_1);
+		flowplayer('playerDiv2', swfStr, obj_2);
+		flowplayer('playerDiv3', swfStr, obj_3);
+	</script>
+</body>
+</html>
