@@ -4,7 +4,7 @@
 
 ![img](https://github.com/HuerFu/h5_rtmp_play/blob/master/img/1.png)
 
-####  二、flowplayerjs播放rtmp流媒体效果：——支持在直接打开播放rtmp——浏览器需支持flash
+####  二、flowplayerjs播放rtmp流媒体效果：——支持在本地直接打开播放rtmp——浏览器需支持flash
 
 ![img](https://github.com/HuerFu/h5_rtmp_play/blob/master/img/2.png)
 
